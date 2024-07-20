@@ -1,0 +1,35 @@
+#hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: #80c8a5;
+  color: white;
+}
+
+#hero button {
+  padding: 10px 20px;
+  background: #06316e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#features,
+#screenshots,
+#testimonials,
+footer {
+  padding: 50px 20px;
+  background: white;
+  text-align: center;
+}
+
+.feature {
+  margin-bottom: 20px;
+}
+
+.feature img {
+  height: 80px;
+}
+
+.titleColor {
+  color: #80c8a5;
+}
