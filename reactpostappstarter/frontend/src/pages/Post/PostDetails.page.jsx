@@ -4,12 +4,14 @@ import { Container, Title, Text, Button, Image } from "@mantine/core";
 import axios from "axios";
 import DOMAIN from "../../services/endpoint";
 import LoadingSpinner from "../../components/misc/LoadingSpinner";
+import useBoundStore from "../../store/Store";
 
 const PostDetailsPage = ({ user }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
+  //const { user } = useBoundStore((state) => state);
 
   useEffect(() => {
     const loadPostDetails = async () => {

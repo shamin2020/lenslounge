@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import useBoundStore from "../../store/Store";
+import LoadingSpinner from "../../components/misc/LoadingSpinner";
 import {
   TextInput,
   PasswordInput,
@@ -44,31 +45,38 @@ const LoginPage = () => {
         </Anchor>
       </Text>
 
-      <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-        <form onSubmit={onLogin}>
-          <TextInput
-            label="Email"
-            placeholder="you@mantine.dev"
-            required
-            ref={emailRef}
-          />
-          <PasswordInput
-            label="Password"
-            placeholder="Your password"
-            required
-            mt="md"
-            ref={passwordRef}
-          />
-          <Group position="apart" mt="lg">
-            <Checkbox label="Remember me" />
-            <Anchor component="button" size="sm">
-              Forgot password?
-            </Anchor>
-          </Group>
-          <Button type="submit" fullWidth mt="xl" loading={authLoading}>
-            Sign in
-          </Button>
-        </form>
+      <Paper
+        component="form"
+        withBorder
+        shadow="md"
+        p={30}
+        mt={30}
+        radius="md"
+        onSubmit={onLogin}
+      >
+        <TextInput
+          label="Email"
+          placeholder="you@mantine.dev"
+          required
+          ref={emailRef}
+        />
+        <PasswordInput
+          label="Password"
+          placeholder="Your password"
+          required
+          mt="md"
+          ref={passwordRef}
+        />
+        <Group position="apart" mt="lg">
+          <Checkbox label="Remember me" />
+          <Anchor component="button" size="sm">
+            Forgot password?
+          </Anchor>
+        </Group>
+        <Button type="submit" fullWidth mt="xl" loading={authLoading}>
+          Sign in
+        </Button>
+        {authLoading ? <LoadingSpinner /> : null}
       </Paper>
     </Container>
   );

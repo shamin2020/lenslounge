@@ -1,11 +1,14 @@
 {
-  "name": "testing",
+  "name": "lenslounge",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://shamin2020.github.io/lenslounge",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -17,7 +20,7 @@
     "@mantine/notifications": "^7.11.1",
     "@tabler/icons-react": "^3.10.0",
     "axios": "^0.27.2",
-    "framer-motion": "^10.12.16",
+    "framer-motion": "^10.18.0",
     "jwt-decode": "^3.1.2",
     "postcss": "^8.4.31",
     "postcss-preset-mantine": "^1.9.0",
@@ -32,6 +35,7 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
+    "gh-pages": "^6.1.1",
     "vite": "^3.1.0"
   }
 }
